@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Xianying Chen.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -30,7 +30,7 @@ import simple_testing as st
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_practice_problem2a()
+    # run_test_practice_problem2a()
     run_test_practice_problem2b()
 
 
@@ -42,7 +42,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # done: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4 reasonable   ** tests.
     #
@@ -55,6 +55,34 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
+
+    # Test 1:
+    print()
+    expected = [8, 16, 10, -14, 14]
+    actual = practice_problem2a([2, 10, 4, -20, 8], 6)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 2:
+    print()
+    expected = [8, -4, 10, -14, 18]
+    actual = practice_problem2a([2, -10, 4, -20, 12], 6)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 3:
+    print()
+    expected = [13, 14, 15]
+    actual = practice_problem2a([7, 8, 9], 6)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 4:
+    print()
+    expected = [12, 14, 19]
+    actual = practice_problem2a([5, 7, 12], 7)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def practice_problem2a(sequence, delta):
@@ -76,13 +104,17 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # done: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
+    new_list = []
+    for k in range(len(sequence)):
+        new_list = new_list + [sequence[k] + delta]
+    return new_list
 
 
 def run_test_practice_problem2b():
@@ -170,7 +202,7 @@ def practice_problem2b(sequence):
       :type sequence [str]
     """
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -178,6 +210,15 @@ def practice_problem2b(sequence):
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
 
+    str_1 = ''
+    for k in range(len(sequence)):
+        str_2 = str(sequence[k])
+        if len(str_2) < 1:
+            str_1 = str_1
+        else:
+            str_1 = str_1 + str_2[0]
+
+    return str_1
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
